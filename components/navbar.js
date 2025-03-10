@@ -5,14 +5,14 @@ function loadNavBar(page) {
 
         navBar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                          <div class="container-fluid">
-                             <a class="navbar-brand" href="#">Navbar</a>
+                             <a class="navbar-brand" href="https://danny-huasco.github.io"><b>DANNY HUASCO</b>&nbsp<small>Web Developer</small></a>
                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                  <span class="navbar-toggler-icon"></span>
                              </button>
-                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                                  <div class="navbar-nav ">
-                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                     <a class="nav-link" href="#">Contact</a>
+                                     <a class="nav-link active" aria-current="page" href="https://danny-huasco.github.io" id="homeNav">Home</a>
+                                     <a class="nav-link" href="https://danny-huasco.github.io/contact" id="contactNav">Contact</a>
                                  </div>
                              </div>
                          </div>
@@ -20,15 +20,15 @@ function loadNavBar(page) {
     }else{
         navBar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                          <div class="container-fluid">
-                             <a class="navbar-brand" href="#">Navbar</a>
+                             <a class="navbar-brand" href="https://danny-huasco.github.io"><b>DANNY HUASCO</b>&nbsp<small>Web Developer</small></a>
                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                  <span class="navbar-toggler-icon"></span>
                              </button>
-                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                                  <div class="navbar-nav ">
                                      <div class="navbar-nav ">
-                                        <a class="nav-link" href="#">Home</a>
-                                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                                        <a class="nav-link" href="https://danny-huasco.github.io" id="homeNav">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="https://danny-huasco.github.io/contact" id="contactNav">Contact</a>
                                      </div>
                                  </div>
                              </div>
