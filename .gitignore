@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+/dist/
+.vite/
+coverage/
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local-only project tooling and review files
+/skills/
+/.github/prompts/
+/CHANGELOG.md
+
+# Optional local caches
+.cache/
+.parcel-cache/
