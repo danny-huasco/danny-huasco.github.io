@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
 
+type GitHubRepo = {
+  id: number;
+  html_url: string;
+  name: string;
+};
+
 function RepoList() {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadRepositories() {
@@ -12,9 +18,9 @@ function RepoList() {
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
-        const repoData = await response.json();
+        const repoData = (await response.json()) as GitHubRepo[];
         setRepos(repoData);
-      } catch (fetchError) {
+      } catch {
         setError('Unable to load repositories right now.');
       } finally {
         setLoading(false);
@@ -29,7 +35,7 @@ function RepoList() {
       <div className="card-body">
         <h5 className="card-title">GitHub Repositories</h5>
         <p className="card-text">
-          Here are some of my projects on GitHub, they're not prepared to be a portfolio, but it's some of the exercises that I've done in my academic life:
+          Here are some of my projects on GitHub, they&apos;re not prepared to be a portfolio, but it&apos;s some of the exercises that I&apos;ve done in my academic life:
         </p>
         <ul className="list-group">
           {loading && <li className="list-group-item">Loading repos...</li>}

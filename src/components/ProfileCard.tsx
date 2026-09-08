@@ -11,11 +11,11 @@ function ProfileCard() {
           <div className="card-body">
             <h5 className="card-title">WEB DEV AND STUDENT</h5>
             <p className="card-text">
-              Let's say I love being a developer, here is where that text about mission and vision goes and motivates you to{' '}
+              Let&apos;s say I love being a developer, here is where that text about mission and vision goes and motivates you to{' '}
               <a href="#/contact">contact me</a>.
             </p>
             <p className="card-text">
-              <small className="text-body-secondary">"Love what you do and you'll never have to work"</small>
+              <small className="text-body-secondary">&ldquo;Love what you do and you&apos;ll never have to work&rdquo;</small>
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ function Contact() {
       <div className="col-md-6">
         <div className="card mb-3 mt-3">
           <div className="card-body">
-            <h5 className="card-title">Describe what you're looking for!</h5>
+            <h5 className="card-title">Describe what you&apos;re looking for!</h5>
             <small className="text-muted">
               Make sure to include all details that can be transformed into functional software
             </small>
@@ -25,7 +25,7 @@ function Contact() {
                 <label htmlFor="message" className="form-label">
                   Project Proposal
                 </label>
-                <textarea className="form-control" id="message" rows="5" required></textarea>
+                <textarea className="form-control" id="message" rows={5} required></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
                 Submit

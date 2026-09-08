@@ -18,7 +18,7 @@ function PrivacyPage() {
             </p>
             <p>
               I may use third-party services, such as GitHub and LinkedIn, to display publicly available professional
-              information. Please review those providers' privacy policies for additional details.
+              information. Please review those providers&apos; privacy policies for additional details.
             </p>
           </div>
         </div>
