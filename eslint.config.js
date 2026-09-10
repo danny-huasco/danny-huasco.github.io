@@ -25,6 +25,10 @@ export default [
         document: 'readonly',
         console: 'readonly',
         fetch: 'readonly',
+        URL: 'readonly',
+        HTMLInputElement: 'readonly',
+        HTMLTextAreaElement: 'readonly',
+        HTMLFormElement: 'readonly',
       },
     },
     plugins: {

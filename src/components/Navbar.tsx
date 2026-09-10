@@ -1,38 +1,37 @@
 import { NavLink } from 'react-router-dom';
 
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/project-gallery', label: 'Project Gallery' },
+  { to: '/contact', label: 'Contact' },
+  { to: '/privacy', label: 'Privacy' },
+];
+
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <NavLink to="/" className="navbar-brand">
-          <strong>DANNY HUASCO</strong>&nbsp;<small>Web Developer</small>
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <NavLink to="/" className="flex items-center gap-2 text-slate-900 transition hover:text-sky-700">
+          <span className="text-lg font-black tracking-tight sm:text-xl">DANNY HUASCO</span>
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Web Developer</span>
         </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-              Home
+
+        <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium text-slate-600">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `rounded-full px-3 py-2 transition ${
+                  isActive
+                    ? 'bg-sky-600 text-white shadow-sm'
+                    : 'hover:bg-slate-100 hover:text-slate-900'
+                }`
+              }
+            >
+              {item.label}
             </NavLink>
-            <NavLink to="/project-gallery" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-              Project Gallery
-            </NavLink>
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-              Contact
-            </NavLink>
-            <NavLink to="/privacy" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-              Privacy
-            </NavLink>
-          </div>
+          ))}
         </div>
       </div>
     </nav>
