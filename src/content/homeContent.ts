@@ -16,7 +16,10 @@ export const resumeDocument = new URL(
   import.meta.url
 ).href;
 
-export const resumePdfDocument = '/assets/Software Developer Resume - Daniel Huasco Miranda.pdf';
+export const resumePdfDocument = new URL(
+  '../../assets/Software Developer Resume - Daniel Huasco Miranda.pdf',
+  import.meta.url
+).href;
 
 export const aboutParagraphs = [
   'I am a detail-oriented software developer with hands-on enterprise experience building scalable web applications, designing REST APIs, and resolving production defects in Agile SDLC environments. My work is grounded in practical engineering, strong collaboration, and delivering reliable software that supports real business needs.',

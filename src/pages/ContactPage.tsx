@@ -20,7 +20,13 @@ const initialFormState: ContactFormState = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[+]?[(\d\s().-]{7,20}$/;
-const contactApiUrl = import.meta.env.VITE_CONTACT_API_URL?.trim();
+const fieldLimits = {
+  name: 100,
+  email: 254,
+  phone: 30,
+  message: 2000,
+} as const;
+const getContactApiUrl = () => import.meta.env.VITE_CONTACT_API_URL?.trim();
 
 const normalizeString = (value: string) => value.trim();
 
@@ -29,11 +35,17 @@ const validateField = (field: ContactField, value: string): string => {
 
   switch (field) {
     case 'name':
+      if (trimmedValue.length > fieldLimits.name) {
+        return 'Name must be 100 characters or fewer.';
+      }
       if (trimmedValue.length < 2) {
         return 'Please enter your full name.';
       }
       return '';
     case 'email':
+      if (trimmedValue.length > fieldLimits.email) {
+        return 'Email must be 254 characters or fewer.';
+      }
       if (!trimmedValue) {
         return 'Email is required.';
       }
@@ -45,11 +57,17 @@ const validateField = (field: ContactField, value: string): string => {
       if (!trimmedValue) {
         return '';
       }
+      if (trimmedValue.length > fieldLimits.phone) {
+        return 'Phone must be 30 characters or fewer.';
+      }
       if (!phonePattern.test(trimmedValue)) {
         return 'Please enter a valid phone number.';
       }
       return '';
     case 'message':
+      if (trimmedValue.length > fieldLimits.message) {
+        return 'Project details must be 2,000 characters or fewer.';
+      }
       if (trimmedValue.length < 20) {
         return 'Please provide at least 20 characters so I can understand your request.';
       }
@@ -127,6 +145,8 @@ function ContactPage() {
       setSubmitMessage('Please correct the highlighted fields before sending your message.');
       return;
     }
+
+    const contactApiUrl = getContactApiUrl();
 
     if (!contactApiUrl) {
       setSubmitState('error');
@@ -206,6 +226,7 @@ function ContactPage() {
                 id="name"
                 name="name"
                 type="text"
+                maxLength={100}
                 value={formData.name}
                 onChange={handleChange}
                 aria-invalid={Boolean(getFieldError('name'))}
@@ -229,6 +250,7 @@ function ContactPage() {
                 id="email"
                 name="email"
                 type="email"
+                maxLength={254}
                 value={formData.email}
                 onChange={handleChange}
                 aria-invalid={Boolean(getFieldError('email'))}
@@ -252,6 +274,7 @@ function ContactPage() {
                 id="phone"
                 name="phone"
                 type="tel"
+                maxLength={30}
                 value={formData.phone}
                 onChange={handleChange}
                 aria-invalid={Boolean(getFieldError('phone'))}
@@ -274,6 +297,7 @@ function ContactPage() {
                 id="message"
                 name="message"
                 rows={6}
+                maxLength={2000}
                 value={formData.message}
                 onChange={handleChange}
                 aria-invalid={Boolean(getFieldError('message'))}

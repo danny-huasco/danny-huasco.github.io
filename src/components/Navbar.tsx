@@ -13,7 +13,7 @@ function Navbar() {
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="flex items-center gap-2 text-slate-900 transition hover:text-sky-700">
           <span className="text-lg font-black tracking-tight sm:text-xl">DANNY HUASCO</span>
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Web Developer</span>
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Software Developer</span>
         </NavLink>
 
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium text-slate-600">

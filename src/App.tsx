@@ -8,7 +8,7 @@ import ProjectGalleryPage from './pages/ProjectGalleryPage';
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <div className="flex min-h-screen flex-col bg-slate-100 text-slate-900">
         <Navbar />
         <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 sm:px-6 lg:px-8">

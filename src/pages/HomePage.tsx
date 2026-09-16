@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type MouseEvent, useRef, useState } from 'react';
 import profilePic from '../../assets/prof-pic.png';
 import EducationList from '../components/EducationList';
 import ExperienceList from '../components/ExperienceList';
@@ -16,6 +16,12 @@ import {
 
 function HomePage() {
   const [isResumePreviewOpen, setIsResumePreviewOpen] = useState(false);
+  const resumeTriggerRef = useRef<HTMLButtonElement | null>(null);
+
+  const openResumePreview = (event: MouseEvent<HTMLButtonElement>) => {
+    resumeTriggerRef.current = event.currentTarget;
+    setIsResumePreviewOpen(true);
+  };
 
   return (
     <div className="space-y-10 pb-10">
@@ -42,7 +48,8 @@ function HomePage() {
               </a>
               <button
                 type="button"
-                onClick={() => setIsResumePreviewOpen(true)}
+                onClick={openResumePreview}
+                ref={resumeTriggerRef}
                 className="inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-600 hover:text-sky-700"
               >
                 Preview Resume
@@ -94,7 +101,7 @@ function HomePage() {
 
           <button
             type="button"
-            onClick={() => setIsResumePreviewOpen(true)}
+            onClick={openResumePreview}
             className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
           >
             Open Resume
@@ -107,6 +114,7 @@ function HomePage() {
         onClose={() => setIsResumePreviewOpen(false)}
         pdfUrl={resumePdfDocument}
         docxUrl={resumeDocument}
+        returnFocusRef={resumeTriggerRef}
       />
     </div>
   );
