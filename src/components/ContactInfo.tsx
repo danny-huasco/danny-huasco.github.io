@@ -6,7 +6,7 @@ function ContactInfo() {
       <div className="mt-4 space-y-3 text-sm text-slate-600">
         <div>
           <p className="font-medium text-slate-500">Location</p>
-          <p>Jacksonville, Florida</p>
+          <p>Jacksonville, FL</p>
         </div>
 
         <div>
@@ -19,6 +19,11 @@ function ContactInfo() {
         <div>
           <p className="font-medium text-slate-500">Phone</p>
           <p>(904) 707-1627</p>
+        </div>
+
+        <div>
+          <p className="font-medium text-slate-500">Languages</p>
+          <p>English / Spanish</p>
         </div>
       </div>
 

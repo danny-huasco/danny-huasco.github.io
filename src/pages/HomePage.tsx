@@ -29,14 +29,14 @@ function HomePage() {
         <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <p className="mb-4 inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
-              Jacksonville, FL • Software Developer
+              Jacksonville, FL • Software Developer • English / Spanish
             </p>
             <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               Daniel Huasco Miranda
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-              Detail-oriented Software Developer with hands-on enterprise experience building scalable web applications,
-              designing REST APIs, and resolving production defects in Agile SDLC environments.
+              Detail-oriented Software Developer and UNF Magna Cum Laude graduate with enterprise experience building
+              scalable web applications, REST APIs, and cloud services across modern software engineering workflows.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
